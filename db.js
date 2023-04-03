@@ -8,6 +8,8 @@ let db;
 const DB_URI = `socket:/var/run/postgresql?db=${getDatabaseUri()}`
 
 if (process.env.NODE_ENV === "production") {
+  DB_URI.replace('://', 'ql://', 1)
+  
   db = new Client({
     connectionString: DB_URI,
     ssl: {
