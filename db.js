@@ -9,7 +9,7 @@ const DB_URI = `socket:/var/run/postgresql?db=${getDatabaseUri()}`
 
 if (process.env.NODE_ENV === "production") {
   db = new Client({
-    connectionString: DB_URI,
+    connectionString: process.env.DATABASE_URL || DB_URI,
     ssl: {
       rejectUnauthorized: false
     }
