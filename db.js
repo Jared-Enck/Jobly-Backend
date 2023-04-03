@@ -11,9 +11,7 @@ const PRODUCTION_URI = 'postgresql:///jobly'.replace('://', 'ql://', 1)
 if (process.env.NODE_ENV === "production") {
   db = new Client({
     connectionString: PRODUCTION_URI || DB_URI,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    ssl: process.env.DATABASE_URL ? true : false
   });
 } else {
   db = new Client({
