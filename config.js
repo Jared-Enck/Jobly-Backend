@@ -14,7 +14,7 @@ const PORT = +env.PORT || 3001;
 function getDatabaseUri() {
   return (env.NODE_ENV === "test")
     ? env.DATABASE_TEST
-    : env.DATABASE;
+    : env.DATABASE_URL || "jobly";
 }
 
 // Speed up bcrypt during tests, since the algorithm safety isn't being tested
