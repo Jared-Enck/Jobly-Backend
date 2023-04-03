@@ -5,7 +5,7 @@ const { getDatabaseUri } = require("./config");
 
 let db;
 
-const DB_URI = `socket:/var/run/postgresql?db=${getDatabaseUri()}`.replace('://', 'ql://', 1)
+const DB_URI = `socket:/var/run/postgresql?db=${getDatabaseUri()}`
 
 if (process.env.NODE_ENV === "production") {
   db = new Client({
