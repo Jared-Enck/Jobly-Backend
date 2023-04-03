@@ -2,7 +2,7 @@
 /** Database setup for jobly. */
 const { Client } = require("pg");
 const { getDatabaseUri } = require("./config");
-const os = require('os')
+import os from 'os'
 
 let db;
 
